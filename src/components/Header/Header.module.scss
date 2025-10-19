@@ -1,5 +1,4 @@
 .wrapper{
-    margin-top: 15px;
     width: 95%;
     height: 60px;
     display: flex;
@@ -7,7 +6,7 @@
     align-items: center;
     padding: 0 140px;
     position: sticky;
-    top: 10px;
+    top: 0;
     border-radius: 12px;
     background-color: black;
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
@@ -17,13 +16,16 @@
 
 .wrapper.scrolled {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 255, 0.2); 
-  backdrop-filter: blur(4px); 
-  -webkit-backdrop-filter: blur(10px); 
-  border: 1px solid rgba(255, 255, 255, 0.3); 
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(4px); 
+    -webkit-backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    top: 10px;
 }
 .author-name{
+    cursor: pointer;
     font-weight: 600;
+    font-size: 3rem;
 }
 
 .author-name p{
@@ -40,6 +42,7 @@
 }
 .list-nav li {
     font-weight: 600;
+    font-size: 2rem;
     position: relative;
     list-style: none;
     color: white;

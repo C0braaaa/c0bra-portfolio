@@ -4,11 +4,25 @@ import { Element } from 'react-scroll';
 import styles from './Home.module.scss';
 import Button from '../Button/index-button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faGithub, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faGithub, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 const cx = classNames.bind(styles);
 
 function Home() {
+    const icons = [
+        {
+            icon: faGithub,
+        },
+        {
+            icon: faFacebookF,
+        },
+        {
+            icon: faInstagram,
+        },
+        {
+            icon: faLinkedinIn,
+        },
+    ];
     return (
         <Element name="home">
             <div className={cx('wrapper')}>
@@ -26,14 +40,21 @@ function Home() {
                         developer.
                     </p>
                     <div className={cx('button')}>
-                        <Button primary>See my CV</Button>
-                        <Button outline>See my CV</Button>
+                        <Button primary large>
+                            See my CV
+                        </Button>
+                        <Button outline large>
+                            See my CV
+                        </Button>
                     </div>
                     <div className={cx('social')}>
-                        <FontAwesomeIcon className={cx('icon')} icon={faGithub} />
-                        <FontAwesomeIcon className={cx('icon')} icon={faFacebook} />
-                        <FontAwesomeIcon className={cx('icon')} icon={faInstagram} />
-                        <FontAwesomeIcon className={cx('icon')} icon={faLinkedinIn} />
+                        {icons.map(({ icon }, index) => {
+                            return (
+                                <div className={cx('social-icon')} key={index}>
+                                    <FontAwesomeIcon className={cx('icon')} icon={icon} />
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
                 <div className={cx('avatar')}>

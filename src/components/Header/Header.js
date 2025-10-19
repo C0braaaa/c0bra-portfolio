@@ -50,11 +50,13 @@ function Header() {
 
     return (
         <div className={cx('wrapper', { scrolled: scroll })}>
-            <div className={cx('author-name')}>
-                <p>
-                    C0bra<span className={cx('label')}>DEV</span>
-                </p>
-            </div>
+            <Link to="home" smooth={true} duration={500} offset={-65}>
+                <div className={cx('author-name')}>
+                    <p>
+                        C0bra<span className={cx('label')}>DEV</span>
+                    </p>
+                </div>
+            </Link>
             <nav className={cx('navigator')}>
                 <ul className={cx('list-nav')}>
                     {list.map((value, index) => {
@@ -66,6 +68,8 @@ function Header() {
                                 duration={500}
                                 spy={true}
                                 key={index}
+                                offset={-65}
+                                className={!scroll && index === 0 ? cx('active') : ''}
                             >
                                 <li>{value.label}</li>
                             </Link>
