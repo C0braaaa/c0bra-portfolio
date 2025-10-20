@@ -6,6 +6,7 @@ import styles from './Home.module.scss';
 import Button from '../Button/index-button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faGithub, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import ProfileCard from '../UI/ProfileCard/ProfileCard';
 
 const cx = classNames.bind(styles);
 
@@ -39,7 +40,7 @@ function Home() {
                         ideas into reality through code — especially using modern tools like React and TypeScript. In
                         the future, I aim to keep improving my skills and expand my knowledge to become a full-stack
                         developer."
-                        delay={150}
+                        delay={100}
                         animateBy="words"
                         direction="top"
                         className={cx('p-2')}
@@ -62,9 +63,18 @@ function Home() {
                         })}
                     </div>
                 </div>
-                <div className={cx('avatar')}>
-                    <img className={cx('avatar-1')} src="assets/bruno.jpg" alt="avatar" />
-                </div>
+                <ProfileCard
+                    name="Thanh Hieu"
+                    title="Frontend Web Developer"
+                    handle="C0bra"
+                    status="Online"
+                    contactText="Contact Me"
+                    avatarUrl="assets/bruno-removebg-preview.png"
+                    showUserInfo={true}
+                    enableTilt={true}
+                    enableMobileTilt={false}
+                    onContactClick={() => console.log('Contact clicked')}
+                />
             </div>
         </Element>
     );
