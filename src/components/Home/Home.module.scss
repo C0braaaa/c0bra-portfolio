@@ -1,7 +1,7 @@
 .wrapper {
     min-height: 700px;
     color: rgb(255, 255, 255);
-    padding: 9rem 10rem 7rem 10rem;
+    padding: 9rem 10rem 0 10rem;
     display: flex;
     justify-content: space-between;
 }
@@ -68,7 +68,7 @@
     cursor: pointer;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 12px;
     border: 3px solid var(--primary);
     display: flex;
     justify-content: center;
@@ -128,7 +128,78 @@
     height: 100%;
 }
 
+// logo loop
+.logo-loop {
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+
+    .loop-line {
+        display: inline-flex;
+        align-items: center;
+        gap: 4rem;
+        animation: scroll 20s linear infinite;
+
+        &:hover {
+            animation-play-state: paused;
+            cursor: pointer;
+        }
+
+        .loop-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            .loop-icon {
+                font-size: 4rem;
+                transition: transform 0.5s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+            .icon-name {
+                color: white;
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+.logo-loop::before,
+.logo-loop::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.logo-loop::before {
+    left: 0;
+    background: linear-gradient(to right, #000000 0%, transparent 100%);
+}
+.logo-loop::after {
+    right: 0;
+    background: linear-gradient(to left, rgb(0, 0, 0), transparent 100%);
+}
+
 // animate
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 .fade-in-left {
     opacity: 0;
     transform: translateX(-50px);
@@ -164,6 +235,29 @@
 @keyframes top-down {
     to {
         opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.flip-horizontal {
+    animation: flipY 1s forwards;
+}
+
+@keyframes flipY {
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.wave {
+    animation: wave 2s forwards;
+}
+
+@keyframes wave {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
         transform: translateY(0);
     }
 }
