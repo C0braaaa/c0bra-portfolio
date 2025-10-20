@@ -93,20 +93,6 @@
 }
 
 .large{
-    position: relative;
     min-width: 140px;
     padding: 14px 16px;
-    transition: all 0.3s ease;
-    box-shadow: white 0px 10px 0px 0px;
-
-    &:hover {
-        box-shadow: white 0px 7px 0px 0px;
-    }
-
-    &:active{
-        background-color: var(--secondary);
-        box-shadow: white 0px 0px 0px 0px;
-        transform: translateY(5px);
-        transition: 200ms;
-    }
 }

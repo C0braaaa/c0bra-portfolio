@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { Element } from 'react-scroll';
 
+import BlurText from '../UI/BlurText';
 import styles from './Home.module.scss';
 import Button from '../Button/index-button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,24 +27,28 @@ function Home() {
     return (
         <Element name="home">
             <div className={cx('wrapper')}>
-                <div className={cx('content')}>
-                    <p className={cx('p-1', 'fade-in-left')}>
+                <div className={cx('content', 'fade-in-top')}>
+                    <p className={cx('p-1', 'fade-in-right')}>
                         Hello, I'm <span className={cx('span-1')}>Thanh Hieu</span>
                     </p>
                     <div style={{ display: 'flex', gap: 12 }}>
                         <h1>I'm a</h1> <h1 className={cx('text-animate')}>Frontend Web Developer</h1>
                     </div>
-                    <p className={cx('p-2', 'fade-in-left')}>
-                        I’m passionate about creating clean, interactive, and responsive web experiences. I love turning
+                    <BlurText
+                        text="I’m passionate about creating clean, interactive, and responsive web experiences. I love turning
                         ideas into reality through code — especially using modern tools like React and TypeScript. In
                         the future, I aim to keep improving my skills and expand my knowledge to become a full-stack
-                        developer.
-                    </p>
+                        developer."
+                        delay={150}
+                        animateBy="words"
+                        direction="top"
+                        className={cx('p-2')}
+                    />
                     <div className={cx('button')}>
-                        <Button primary large>
+                        <Button primary large className={cx('fade-in-left')}>
                             See my CV
                         </Button>
-                        <Button outline large>
+                        <Button outline large className={cx('fade-in-right')}>
                             See my CV
                         </Button>
                     </div>

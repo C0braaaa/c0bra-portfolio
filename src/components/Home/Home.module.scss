@@ -1,7 +1,7 @@
 .wrapper{
     min-height: 700px;
     color: rgb(255, 255, 255);
-    padding: 70px 100px 70px  100px;
+    padding: 100px 100px 70px  100px;
     display: flex;
     justify-content: space-between;
 }
@@ -15,6 +15,8 @@
 .p-1{
     font-weight: 600;
     font-size: 3rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .span-1{
@@ -139,5 +141,31 @@
   to {
     opacity: 1;            
     transform: translateX(0);
+  }
+}
+
+.fade-in-right {
+  opacity: 0;          
+  transform: translateX(50px);
+  animation: fadeInRight 0.8s forwards;
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;            
+    transform: translateX(0);
+  }
+}
+
+.fade-in-top {
+  opacity: 0;          
+  transform: translateY(-50px);
+  animation: top-down 1s forwards;
+}
+
+@keyframes top-down {
+  to {
+    opacity: 1;            
+    transform: translateY(0);
   }
 }

@@ -69,7 +69,6 @@ function Header() {
                                 spy={true}
                                 key={index}
                                 offset={-65}
-                                className={!scroll && index === 0 ? cx('active') : ''}
                             >
                                 <li>{value.label}</li>
                             </Link>
