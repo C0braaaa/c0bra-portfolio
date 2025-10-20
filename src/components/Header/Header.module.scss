@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
     width: 95%;
     height: 60px;
     display: flex;
@@ -8,7 +8,7 @@
     position: sticky;
     top: 0;
     border-radius: 12px;
-    background-color: black;
+    background-color: transparent;
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
     z-index: 100;
     margin-left: 2.5%;
@@ -16,26 +16,26 @@
 
 .wrapper.scrolled {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.2); 
-    backdrop-filter: blur(4px); 
-    -webkit-backdrop-filter: blur(10px); 
-    border: 1px solid rgba(255, 255, 255, 0.3); 
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     top: 10px;
 }
-.author-name{
+.author-name {
     cursor: pointer;
     font-weight: 600;
     font-size: 3rem;
 }
 
-.author-name p{
+.author-name p {
     color: var(--text-color);
 }
 
-.label{
+.label {
     color: var(--primary);
 }
-.list-nav{
+.list-nav {
     display: flex;
     padding: 10px;
     gap: 20px;
@@ -54,11 +54,11 @@
         position: absolute;
         bottom: -3px;
         left: 0;
-        width: 0; 
+        width: 0;
         height: 4px;
         background: var(--primary);
         border-radius: 1px;
-        transition: width 0.3s ease; 
+        transition: width 0.3s ease;
     }
 
     &:hover {
@@ -66,12 +66,10 @@
     }
 }
 
-
 .active li {
-  color: var(--primary);
+    color: var(--primary);
 }
 
 .active li::after {
-  width: 100%;
+    width: 100%;
 }
-

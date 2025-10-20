@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
     --white: white;
 
     display: inline-flex;
@@ -14,36 +14,37 @@
     background-color: var(--white);
     border: 1px solid transparent;
     user-select: none;
-    + .wrapper{
+    + .wrapper {
         margin-left: 8px;
     }
 
     // Disable
-    &.disabled{
+    &.disabled {
         pointer-events: none;
-        opacity: .5;
+        opacity: 0.5;
     }
 }
 
-.icon + .title, .title + .icon{
+.icon + .title,
+.title + .icon {
     margin-left: 8px;
 }
 
-.icon{
+.icon {
     display: inline-block;
     width: 24px;
     text-align: center;
 }
 
 //Button type
-.rounded{
+.rounded {
     border-radius: 99px;
     box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
-    border-color: rgb(22, 24, 35, .12);
+    border-color: rgb(22, 24, 35, 0.12);
 
-    &:hover{
-        border-color: rgb(22, 24, 35, .2);
-        background-color: rgb(22, 24, 35, .03);
+    &:hover {
+        border-color: rgb(22, 24, 35, 0.2);
+        background-color: rgb(22, 24, 35, 0.03);
         cursor: pointer;
     }
 }
@@ -54,7 +55,7 @@
     border-color: var(--primary);
     // transform: translateY(-0.1em);
 
-    &:hover{
+    &:hover {
         border-color: var(--primary);
         background: var(--secondary);
         cursor: pointer;
@@ -65,12 +66,12 @@
     // }
 }
 
-.outline{
+.outline {
     color: var(--primary);
     border-color: var(--primary);
-    background-color: #03060D;
+    background-color: transparent;
 
-    &:hover{
+    &:hover {
         color: var(--white);
         border-color: var(--primary);
         background-color: var(--secondary);
@@ -78,8 +79,8 @@
     }
 }
 
-.text{
-    &:hover{
+.text {
+    &:hover {
         text-decoration: underline;
         text-decoration-thickness: 2px;
         cursor: pointer;
@@ -87,12 +88,12 @@
 }
 
 //Button size
-.small{
+.small {
     min-width: 88px;
     padding: 4px 16px;
 }
 
-.large{
+.large {
     min-width: 140px;
     padding: 14px 16px;
 }
