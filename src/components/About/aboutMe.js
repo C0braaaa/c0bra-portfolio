@@ -8,9 +8,7 @@ const cx = classNames.bind(styles);
 function AboutMe() {
     return (
         <Element name="about">
-            <div className={cx('wrapper')}>
-                <h1>About Me</h1>
-            </div>
+            <div className={cx('wrapper')}></div>
         </Element>
     );
 }

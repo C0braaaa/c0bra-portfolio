@@ -6,11 +6,11 @@ import DarkVeil from './components/UI/DarkVeil/DarkVeil';
 
 function App() {
     return (
-        <div style={{ width: '100%', minHeight: '100%', position: 'relative' }}>
+        <div style={{ width: '100%', height: '100%', position: 'relative' }}>
             <DarkVeil />
             <Header />
             <Home />
-            <AboutMe />
+            {/* <AboutMe /> */}
         </div>
     );
 }

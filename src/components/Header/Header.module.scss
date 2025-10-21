@@ -64,6 +64,10 @@
     &:hover {
         color: var(--primary);
     }
+
+    &:hover::after {
+        width: 100%;
+    }
 }
 
 .active li {
