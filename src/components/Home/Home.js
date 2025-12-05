@@ -17,6 +17,7 @@ import {
     faSass,
 } from '@fortawesome/free-brands-svg-icons';
 import BlurText from '../React-Bits/BlurText';
+import TextType from '../React-Bits/TextType/TextType';
 
 const cx = classNames.bind(styles);
 
@@ -105,7 +106,13 @@ function Home() {
                             Hello, I'm <span className={cx('span-1')}>Thanh Hieu</span>
                         </p>
                         <div style={{ display: 'flex', gap: 12 }}>
-                            <h1>I'm a</h1> <h1 className={cx('text-animate')}>Frontend Web Developer</h1>
+                            <TextType
+                                text={["I'm a Front-end Web Developer", 'Nice to meet you!']}
+                                typingSpeed={75}
+                                pauseDuration={5000}
+                                showCursor={true}
+                                cursorCharacter="_"
+                            />
                         </div>
                         <BlurText
                             text="I’m passionate about building clean, interactive, and fully responsive web 

@@ -1,4 +1,6 @@
 .wrapper {
+    width: 100vw;
+    height: 90vh;
     padding: 3rem 30rem 0 30rem;
     display: flex;
     flex-direction: column;
@@ -28,7 +30,7 @@
     margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 2rem;
 
     .info-item {
         display: flex;
@@ -39,11 +41,6 @@
         border: 2px solid var(--border-color-l);
         animation: none;
         opacity: 0;
-
-        .wrapper.is-visible & {
-            animation: fadeInBottom 1s linear forwards;
-            opacity: 1;
-        }
 
         .info {
             display: flex;
@@ -61,6 +58,10 @@
     }
 }
 
+.wrapper.is-visible .info-item {
+    animation: fadeInBottom 1s linear forwards;
+    opacity: 1;
+}
 // animation
 @keyframes fadeInBottom {
     from {
@@ -81,5 +82,13 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+//responsive
+@media (max-width: 1600px) {
+    .wrapper {
+        height: 100vh;
+        padding: 5rem 10rem 0 10rem;
     }
 }

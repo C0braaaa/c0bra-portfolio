@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-scroll';
 
@@ -32,17 +32,23 @@ function Header() {
     ];
 
     const [scroll, setScroll] = useState(false);
+    const lastScrollYRef = useRef(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 0) {
-                setScroll(true);
-            } else {
-                setScroll(false);
+            const currentScrollY = window.scrollY;
+            const wasScrolled = lastScrollYRef.current > 0;
+            const isScrolled = currentScrollY > 0;
+
+            // Chỉ update state khi trạng thái scrolled thay đổi
+            if (wasScrolled !== isScrolled) {
+                setScroll(isScrolled);
             }
+
+            lastScrollYRef.current = currentScrollY;
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -51,7 +57,7 @@ function Header() {
 
     return (
         <div className={cx('wrapper', { scrolled: scroll })}>
-            <Link to="home" smooth={true} duration={500} offset={-65}>
+            <Link to="home" smooth={true} duration={200}>
                 <div className={cx('author-name')}>
                     <p>
                         C0bra<span className={cx('label')}>DEV</span>
@@ -66,7 +72,7 @@ function Header() {
                                 activeClass={cx('active')}
                                 to={value.to}
                                 smooth={true}
-                                duration={500}
+                                duration={200}
                                 spy={true}
                                 key={index}
                                 offset={-65}

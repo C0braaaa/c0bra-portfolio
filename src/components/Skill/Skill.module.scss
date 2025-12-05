@@ -1,23 +1,112 @@
 .wrapper {
-    height: 800px;
+    width: 100vw;
+    height: 40vh;
     color: var(--text-color);
-    padding: 60px;
+    padding: 0 10rem;
     animation: none;
     opacity: 0;
+    display: flex;
+    flex-direction: column;
 
     &.is-visible {
-        animation: fadeInTop 1s linear forwards;
+        animation: fadeInBottom 0.5s linear forwards;
         opacity: 1;
     }
 }
 
-@keyframes fadeInTop {
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-skill {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+
+    .item-skill {
+        position: relative;
+        display: flex;
+        gap: 2rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background: var(--bg-color);
+        animation: none;
+        opacity: 0;
+
+        .wrapper.is-visible & {
+            animation: fadeInBottom 1s ease-in-out forwards;
+            opacity: 1;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 2px;
+            border-radius: 0.5rem;
+            background: conic-gradient(from 0deg, #ff00c8, #8a2be2, #4d6bff, #00e1ff, #ff00c8);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            width: 5rem;
+            height: 100%;
+            background-color: var(--text-secondary);
+
+            img {
+                width: 80%;
+                height: 80%;
+                object-fit: contain;
+            }
+        }
+        .info {
+            display: flex;
+            gap: 0.5rem;
+            flex-direction: column;
+
+            .name {
+                font-size: 2rem;
+            }
+            .note {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+// responsive
+@media (max-width: 1600px) {
+    .wrapper {
+        height: 70vh;
+        padding: 5rem 5rem 0 5rem;
     }
 }
