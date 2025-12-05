@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import { Link } from 'react-scroll';
 
 import styles from './Header.module.scss';
+import ThemeToggle from '../ThemeContext/ThemeToogle';
 
 const cx = classNames.bind(styles);
 
@@ -13,7 +14,7 @@ function Header() {
             to: 'home',
         },
         {
-            label: 'About Me',
+            label: 'About',
             to: 'about',
         },
         {
@@ -74,6 +75,7 @@ function Header() {
                             </Link>
                         );
                     })}
+                    <ThemeToggle />
                 </ul>
             </nav>
         </div>

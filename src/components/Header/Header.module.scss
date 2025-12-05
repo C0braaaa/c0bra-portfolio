@@ -15,37 +15,41 @@
 }
 
 .wrapper.scrolled {
+    /* đổi màu theo theme */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(4px);
+    background-color: var(--header-bg, rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid var(--header-border, rgba(255, 255, 255, 0.3));
     top: 10px;
 }
+
 .author-name {
     cursor: pointer;
     font-weight: 600;
-    font-size: 3rem;
-}
+    font-size: 2.4rem;
 
-.author-name p {
-    color: var(--text-color);
+    p {
+        color: var(--text-color);
+    }
 }
 
 .label {
     color: var(--primary);
 }
+
 .list-nav {
     display: flex;
     padding: 10px;
-    gap: 20px;
+    gap: 3rem;
 }
+
 .list-nav li {
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.8rem;
     position: relative;
     list-style: none;
-    color: white;
+    color: var(--text-color);
     cursor: pointer;
     transition: color 0.3s ease;
 
@@ -76,4 +80,10 @@
 
 .active li::after {
     width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        display: none;
+    }
 }

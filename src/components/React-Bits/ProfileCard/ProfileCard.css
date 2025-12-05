@@ -34,7 +34,7 @@
     position: relative;
     touch-action: none;
 }
-
+/* 
 .pc-card-wrapper::before {
     content: '';
     position: absolute;
@@ -47,7 +47,7 @@
     transform: scale(0.8) translate3d(0, 0, 0.1px);
     background-size: 100% 100%;
     background-image: var(--behind-gradient);
-}
+} */
 
 .pc-card-wrapper:hover,
 .pc-card-wrapper.active {
@@ -350,7 +350,7 @@
 .pc-details {
     width: 100%;
     position: absolute;
-    top: 3em;
+    top: 1.5em;
     display: flex;
     flex-direction: column;
 }

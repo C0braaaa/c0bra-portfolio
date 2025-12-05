@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
+import { useState } from 'react';
 import { Element } from 'react-scroll';
 
-import BlurText from '../UI/BlurText';
 import styles from './Home.module.scss';
 import Button from '../Button/index-button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,11 +16,12 @@ import {
     faReact,
     faSass,
 } from '@fortawesome/free-brands-svg-icons';
-import ProfileCard from '../UI/ProfileCard/ProfileCard';
+import BlurText from '../React-Bits/BlurText';
 
 const cx = classNames.bind(styles);
 
 function Home() {
+    const [showCV, setShowCV] = useState(false);
     const icons = [
         {
             icon: faGithub,
@@ -28,7 +29,7 @@ function Home() {
         },
         {
             icon: faFacebookF,
-            to: 'https://www.youtube.com/shorts/SXHMnicI6Pg',
+            to: 'https://www.facebook.com/c0bra.0f',
         },
         {
             icon: faInstagram,
@@ -107,20 +108,20 @@ function Home() {
                             <h1>I'm a</h1> <h1 className={cx('text-animate')}>Frontend Web Developer</h1>
                         </div>
                         <BlurText
-                            text="I’m passionate about creating clean, interactive, and responsive web experiences. I love turning
-                            ideas into reality through code — especially using modern tools like React and TypeScript. In
-                            the future, I aim to keep improving my skills and expand my knowledge to become a full-stack
-                            developer."
+                            text="I’m passionate about building clean, interactive, and fully responsive web 
+                            experiences that feel smooth and intuitive to users. I love turning ideas into 
+                            real, usable products — from designing the layout to refining the interface and 
+                            bringing everything to life with React. Moving forward, I’m dedicated to improving 
+                            my skills, exploring new technologies, and expanding my knowledge to eventually grow 
+                            into a capable full-stack developer who can handle both the front end and back end 
+                            with confidence."
                             delay={50}
                             animateBy="words"
                             direction="top"
                             className={cx('p-2')}
                         />
                         <div className={cx('btn')}>
-                            <Button primary large className={cx('fade-in-left')}>
-                                See my CV
-                            </Button>
-                            <Button outline large className={cx('fade-in-right')}>
+                            <Button primary large className={cx('fade-in-left')} onClick={() => setShowCV(true)}>
                                 See my CV
                             </Button>
                         </div>
@@ -137,18 +138,7 @@ function Home() {
                         </div>
                     </div>
                     <div className={cx('card', 'flip-horizontal')} style={{ marginRight: 50 }}>
-                        <ProfileCard
-                            name="Thanh Hieu"
-                            title="Frontend Web Developer"
-                            handle="C0bra"
-                            status="Online"
-                            contactText="Contact Me"
-                            avatarUrl="assets/bruno-removebg-preview.png"
-                            showUserInfo={true}
-                            enableTilt={true}
-                            enableMobileTilt={false}
-                            onContactClick={() => console.log('Contact clicked')}
-                        />
+                        <img src="assets/thumb.svg" alt="thumb" />
                     </div>
                 </div>
                 <div className={cx('logo-loop')}>
@@ -175,6 +165,25 @@ function Home() {
                             </div>
                         ))}
                     </div>
+                </div>
+                {showCV && (
+                    <div className={cx('cv-container')}>
+                        <div className={cx('overlay')} onClick={() => setShowCV(false)}></div>
+                        <div className={cx('cv')}>
+                            <iframe
+                                src="assets/CV_Pham_Thanh_Hieu.pdf"
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
+                            ></iframe>
+                        </div>
+                    </div>
+                )}
+                <div className={cx('nofication')}>
+                    <h3>
+                        This portfolio website is currently not optimized for mobile and tablet yet; I will improve it
+                        in the future.
+                    </h3>
                 </div>
             </div>
         </Element>

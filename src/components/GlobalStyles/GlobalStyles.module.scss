@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono&display=swap');
 @import 'normalize.css';
 
 * {
@@ -6,18 +6,67 @@
     padding: 0;
     margin: 0;
 }
+
 :root {
-    --primary: #1e88e5;
-    --secondary: #03a9f4;
-    --text-color: white;
-
-    --font-family: 'Outfit', 'Inter', sans-serif;
-
+    --font-family: 'Azeret Mono', monospace;
     --margin-top: 30px;
+
+    /* Primary Colors */
+    --primary: #1e88e5;
+    --primary-hover: #1565c0;
+    --primary-light: #42a5f5;
+    --secondary: #03a9f4;
+    --secondary-hover: #0288d1;
+
+    /* Light Theme (Default) */
+    --bg-color: #ffffff;
+    --bg-secondary: #f5f5f5;
+    --bg-tertiary: #e0e0e0;
+    --text-color: #1a1a1a;
+    --text-secondary: #555555;
+    --text-tertiary: #999999;
+    --border-color-l: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --header-border: rgba(0, 0, 0, 0.1);
+    --input-bg: #ffffff;
+    --input-border: #e0e0e0;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.08);
+    --overlay-bg: rgba(0, 0, 0, 0.5);
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Dark Theme */
+[data-theme='dark'],
+.dark {
+    --bg-color: #0a0e27;
+    --bg-secondary: #1a1e3a;
+    --bg-tertiary: #252a47;
+    --text-color: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --text-tertiary: #808080;
+    --border-color: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --header-bg: rgba(10, 14, 39, 0.95);
+    --header-border: rgba(255, 255, 255, 0.1);
+    --input-bg: #1a1e3a;
+    --input-border: #333333;
+    --card-bg: #1a1e3a;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --overlay-bg: rgba(0, 0, 0, 0.7);
+
+    /* Accent colors remain the same but may need adjustment */
+    --primary-light: #64b5f6;
 }
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -25,5 +74,14 @@ body {
     font-size: 2rem;
     line-height: 1.5;
     text-rendering: optimizeLegibility;
-    background-color: #000000;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
